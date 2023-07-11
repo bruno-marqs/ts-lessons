@@ -15,12 +15,12 @@ export class NegociacaoController {
     }
 
     // criando funcao para adicionar
-    adiciona() {
+    adiciona(): void {
         const negociacao = this.criaNegociacao();
         console.log(negociacao)
     }
 
-    criaNegociacao() {
+    criaNegociacao(): Negociacao {
         //criando expressão regular para selcionar hifens
         const exp = /-/g;
         // convertendo elementos html nos tipos corretos
