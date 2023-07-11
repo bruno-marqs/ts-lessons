@@ -1,7 +1,13 @@
-// importando classe
-import { Negociacao } from "./models/negociacao.js";
-
+// importanto classe
+import { NegociacaoController } from "./controllers/negociacao-controller.js";
 // instanciando classe
-const negociacao = new Negociacao(new Date(), 10, 1000);
-
-console.log(negociacao.data);
+const controller = new NegociacaoController();
+// atribuindo variavel elemento DOM
+const form = document.querySelector('.form');
+// criando eventListener submit
+form.addEventListener('submit', event => {
+    // evitando refresh da pag
+    event.preventDefault();
+    //executando funcao do controller
+    controller.adiciona();
+})
