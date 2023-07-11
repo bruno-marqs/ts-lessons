@@ -16,6 +16,11 @@ export class NegociacaoController {
 
     // criando funcao para adicionar
     adiciona() {
+        const negociacao = this.criaNegociacao();
+        console.log(negociacao)
+    }
+
+    criaNegociacao() {
         //criando expressão regular para selcionar hifens
         const exp = /-/g;
         // convertendo elementos html nos tipos corretos
@@ -23,8 +28,6 @@ export class NegociacaoController {
         const quantidade = parseInt(this._inputQuantidade.value);
         const valor = parseFloat(this._inputValor.value);
         // instanciando objeto
-        const negociacao = new Negociacao(date, quantidade, valor);
-
-        console.log(negociacao)
+        return new Negociacao(date, quantidade, valor);
     }
 }
