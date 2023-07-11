@@ -14,10 +14,11 @@ export class NegociacaoController {
         this._inputValor = document.querySelector('#valor');
     }
 
-    // criando funcao para adicionar
+    // criando funcao para adicionar negociacao
     adiciona(): void {
         const negociacao = this.criaNegociacao();
         console.log(negociacao)
+        this.limparFormulario();
     }
 
     criaNegociacao(): Negociacao {
@@ -29,5 +30,12 @@ export class NegociacaoController {
         const valor = parseFloat(this._inputValor.value);
         // instanciando objeto
         return new Negociacao(date, quantidade, valor);
+    }
+
+    limparFormulario(): void {
+        this._inputData.value = '';
+        this._inputQuantidade.value = '';
+        this._inputValor.value = '';
+        this._inputData.focus();
     }
 }
