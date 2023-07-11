@@ -1,12 +1,12 @@
 // criando classe
 export class Negociacao {
-    // atributos com '_' 
-    private _data;
-    private _quantidade;
-    private _valor;
+    // atributos com '_' e tipados
+    private _data: Date;
+    private _quantidade: number;
+    private _valor: number;
 
-    // criando construtor
-    constructor(data, quantidade, valor) {
+    // criando construtor com parametros tipados
+    constructor(data: Date, quantidade: number, valor: number) {
         this._data = data;
         this._quantidade = quantidade;
         this._valor = valor;
